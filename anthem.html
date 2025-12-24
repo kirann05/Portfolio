@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anthem Health - Clinical Automation & Patient Engagement Initiative">
+    <title>Anthem Health - Sai Kiran Gandluri</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Prism for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Flex', sans-serif;
+            font-weight: 200;
+            background: #FFFFFF;
+            color: #2C2C2C;
+            line-height: 1.7;
+        }
+
+        .hero-section {
+            background: linear-gradient(to bottom, #FFFFFF, #F8FAFC);
+            padding: 120px 0 80px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 300;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .metric-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-number {
+            font-size: 36px;
+            font-weight: 400;
+            color: #2563EB;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6B7280;
+        }
+
+        .section-header {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: #111827;
+            border-left: 4px solid #3B82F6;
+            padding-left: 20px;
+        }
+
+        .content-card {
+            background: white;
+            border: 1px solid #F3F4F6;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+
+        .tech-tag {
+            background: #EFF6FF;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #2563EB;
+            border: 1px solid #BFDBFE;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .architecture-layer {
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 20px;
+            background: #F9FAFB;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .architecture-layer::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            /* Connects with lines visuals visually if needed */
+        }
+
+        .flow-arrow {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 20px;
+            margin: 8px 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            font-size: 13px;
+            border-radius: 8px;
+        }
+
+        .stat-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .stat-badge.green {
+            background: #DCFCE7;
+            color: #166534;
+        }
+
+        .stat-badge.blue {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="w-full py-6 px-8 fixed top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html"
+                class="flex items-center text-sm font-medium text-gray-600 hover:text-black transition-colors group">
+                <span class="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Profile
+            </a>
+            <div
+                class="text-xs font-semibold text-blue-600 tracking-widest uppercase bg-blue-50 px-3 py-1 rounded-full">
+                Enterprise AI Transformation
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row items-center gap-10 mb-16">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 shrink-0">
+                    <img src="anthem_logo.png" alt="Anthem Health" class="w-32 h-32 object-contain">
+                </div>
+                <div>
+                    <h1 class="hero-title">Anthem Health</h1>
+                    <div class="text-xl text-gray-500 font-light mb-4">
+                        Clinical Automation & Patient Engagement Initiative
+                    </div>
+                    <div class="flex flex-wrap gap-4 text-sm text-gray-600 font-normal">
+                        <span class="flex items-center"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg> AI/ML Engineer (SME)</span>
+                        <span class="flex items-center"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg> Jul 2025 – Present</span>
+                        <span class="flex items-center"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg> USA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Metrics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="metric-card">
+                    <span class="metric-number">60%</span>
+                    <span class="metric-label">Faster Response Time</span>
+                    <div class="text-xs text-green-600 mt-2 font-medium">↓ 48h to 19h</div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">$1.8M</span>
+                    <span class="metric-label">Annual Savings</span>
+                    <div class="text-xs text-green-600 mt-2 font-medium">Efficiency + Fraud Prevention</div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">92%</span>
+                    <span class="metric-label">Fraud Detection Precision</span>
+                    <div class="text-xs text-blue-600 mt-2 font-medium">Using XGBoost Ensemble</div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">50K+</span>
+                    <span class="metric-label">Patient Records</span>
+                    <div class="text-xs text-blue-600 mt-2 font-medium">HIPAA Compliant Pipelining</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-8 pb-20 pt-16">
+
+        <!-- Challenge & Objective -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+            <div class="lg:col-span-2">
+                <section>
+                    <h2 class="section-header">Challenge & Strategic Imperatives</h2>
+                    <div class="prose prose-lg text-gray-600 font-light">
+                        <p class="mb-4">
+                            Healthcare providers face mounting pressure to deliver personalized, timely care while
+                            managing exponentially growing data volumes. Anthem Health identified critical
+                            inefficiencies in patient inquiry management, appointment scheduling (15% no-show rates),
+                            and claims processing fraud risks.
+                        </p>
+                        <p>
+                            <strong>The Strategic Goal:</strong> Transform clinical operations using enterprise-scale
+                            AI/ML to enhance data-driven decision making, ensuring 100% HIPAA/CMS compliance while
+                            significantly reducing operational latency and costs.
+                        </p>
+                    </div>
+                </section>
+            </div>
+            <div class="lg:col-span-1 bg-gray-50 p-8 rounded-xl border border-gray-100">
+                <h3 class="font-medium text-gray-900 mb-4">Key Objectives</h3>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2">🎯</span> Reduce patient inquiry response times by 60%
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2">🎯</span> Decrease appointment no-show rates by 12%
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2">🎯</span> Increase claims anomaly detection precision to 90%+
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 mr-2">🎯</span> Automate clinical documentation review
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Role & Tech Stack -->
+        <section class="mb-20">
+            <div class="content-card">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+                    <div class="flex-1">
+                        <h3 class="text-xl font-normal text-gray-900 mb-6">Role & Responsibilities</h3>
+                        <ul class="space-y-4 text-gray-600 font-light">
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-3 mt-1">●</span>
+                                <span><strong>Architecture Leadership:</strong> Designed comprehensive AWS
+                                    SageMaker-based ML infrastructure integrating LangChain for orchestration and Agents
+                                    for dynamic decision-making.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-3 mt-1">●</span>
+                                <span><strong>GenAI Engineering:</strong> Engineered prompt templates and few-shot
+                                    learning for LLM-based classification (BioBERT/GPT-4), achieving 88% routing
+                                    accuracy.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-3 mt-1">●</span>
+                                <span><strong>Data Governance:</strong> Implemented HIPAA-compliant pipelines processing
+                                    50,000+ records with field-level encryption (AES-256) and IAM role-based
+                                    controls.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-3 mt-1">●</span>
+                                <span><strong>MLOps Productionization:</strong> Containerized models using
+                                    Docker/Kubernetes (EKS) and established CI/CD pipelines with automated testing and
+                                    Blue-Green deployment strategies.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Technology Stack
+                        </h3>
+                        <div class="flex flex-wrap content-start">
+                            <span class="tech-tag">AWS SageMaker</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">Python 3.10</span>
+                            <span class="tech-tag">PyTorch 2.0</span>
+                            <span class="tech-tag">BioBERT</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes (EKS)</span>
+                            <span class="tech-tag">Amazon Redshift</span>
+                            <span class="tech-tag">MLflow</span>
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">GitLab CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Architecture -->
+        <section class="mb-20">
+            <h2 class="section-header">Solution Architecture</h2>
+            <div class="content-card bg-slate-50">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-sm">
+
+                    <!-- Layer 1 -->
+                    <div class="architecture-layer md:col-span-1 border-l-4 border-l-blue-400">
+                        <h4 class="font-semibold text-gray-800 mb-2">Ingestion</h4>
+                        <ul class="text-gray-500 space-y-1 text-xs">
+                            <li>HL7/FHIR EHR Feeds</li>
+                            <li>Claims DB (EDI 837)</li>
+                            <li>Patient Portal</li>
+                        </ul>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="md:col-span-1 flex items-center justify-center">
+                        <div class="text-gray-300 text-2xl">→</div>
+                    </div>
+
+                    <!-- Layer 2 -->
+                    <div class="architecture-layer md:col-span-1 border-l-4 border-l-indigo-400">
+                        <h4 class="font-semibold text-gray-800 mb-2">Processing (AWS Glue)</h4>
+                        <ul class="text-gray-500 space-y-1 text-xs">
+                            <li>Data Cleaning</li>
+                            <li>Standardization (ICD-10)</li>
+                            <li>Feature Engineering</li>
+                            <li>Encryption (KMS)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="md:col-span-1 flex items-center justify-center">
+                        <div class="text-gray-300 text-2xl">→</div>
+                    </div>
+
+                    <!-- Layer 3 -->
+                    <div class="architecture-layer md:col-span-1 border-l-4 border-l-purple-400">
+                        <h4 class="font-semibold text-gray-800 mb-2">Training (SageMaker)</h4>
+                        <ul class="text-gray-500 space-y-1 text-xs">
+                            <li>Fraud Detection (XGB)</li>
+                            <li>Inquiry Classifier (BERT)</li>
+                            <li>NLP Models (T5)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center text-gray-300 text-2xl my-4">↓</div>
+
+                <div class="architecture-layer border-l-4 border-l-green-400">
+                    <h4 class="font-semibold text-gray-800 mb-2">Orchestration & Inference (LangChain + EKS)</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-gray-600">
+                        <div class="bg-white p-3 rounded border border-gray-100">
+                            <strong>LangChain Agents</strong><br>
+                            Reasoning engine for routing inquiries based on content & priority.
+                        </div>
+                        <div class="bg-white p-3 rounded border border-gray-100">
+                            <strong>FIFO Priority Queue</strong><br>
+                            High/Medium/Low tiers with SLA tracking.
+                        </div>
+                        <div class="bg-white p-3 rounded border border-gray-100">
+                            <strong>Docker Containers</strong><br>
+                            Scalable inference endpoints on Kuberenetes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Implementation Details -->
+        <section class="mb-20">
+            <h2 class="section-header">Technical Implementation</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Python Code -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4 flex items-center">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            class="w-6 h-6 mr-2">
+                        Inquiry Classification Pipeline
+                    </h3>
+                    <div class="rounded-lg overflow-hidden shadow-sm border border-gray-200">
+                        <pre><code class="language-python">class InquiryClassifier:
+    def __init__(self, model_name="emilyalsentzer/Bio_ClinicalBERT"):
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModelForSequenceClassification.from_pretrained(
+            model_name, num_labels=8
+        )
+        self.categories = [
+            "Appointment", "Billing", "Clinical", "Prescription",
+            "Insurance", "General", "Urgent", "Feedback"
+        ]
+
+    def classify(self, inquiry_text):
+        """Classifies patient inquiry into 8 distinct categories"""
+        inputs = self.tokenizer(
+            inquiry_text, return_tensors="pt", 
+            truncation=True, max_length=512
+        )
+        with torch.no_grad():
+            outputs = self.model(**inputs)
+            probs = torch.softmax(outputs.logits, dim=1)
+            confidence, predicted_class = torch.max(probs, dim=1)
+        
+        return {
+            "category": self.categories[predicted_class.item()],
+            "confidence": confidence.item(),
+            "probabilities": probs.squeeze().tolist()
+        }</code></pre>
+                    </div>
+                </div>
+
+                <!-- SQL Code -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4 flex items-center">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                            class="w-6 h-6 mr-2">
+                        Fraud Detection Feature Engineering
+                    </h3>
+                    <div class="rounded-lg overflow-hidden shadow-sm border border-gray-200">
+                        <pre><code class="language-sql">-- Feature engineering for fraud detection
+WITH claim_features AS (
+    SELECT 
+        c.claim_id, c.provider_id, c.claim_amount,
+        -- Provider historical patterns
+        AVG(c2.claim_amount) OVER (
+            PARTITION BY c.provider_id 
+            ORDER BY c2.claim_date
+            ROWS BETWEEN 90 PRECEDING AND 1 PRECEDING
+        ) AS provider_avg_amount_90d,
+        -- Patient historical patterns
+        COUNT(DISTINCT c2.provider_id) OVER (
+            PARTITION BY c.patient_id 
+            ORDER BY c2.claim_date
+            ROWS BETWEEN 90 PRECEDING AND 1 PRECEDING
+        ) AS patient_provider_diversity_90d
+    FROM claims c
+    LEFT JOIN claims c2 ON c.provider_id = c2.provider_id
+)
+SELECT *,
+    CASE 
+        WHEN claim_amount > provider_avg_amount_90d * 3 THEN 1 
+        ELSE 0 
+    END AS amount_anomaly_flag
+FROM claim_features
+WHERE amount_anomaly_flag = 1;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results & Analytics -->
+        <section class="mb-20">
+            <h2 class="section-header">Impact Analytics & ROI</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="content-card">
+                    <h3 class="text-lg font-medium text-gray-800 mb-6 text-center">Inquiry Response Time Reduction</h3>
+                    <canvas id="responseTimeChart"></canvas>
+                    <p class="text-center text-xs text-gray-500 mt-4">Statistically significant reduction (p < 0.001) in
+                            A/B testing</p>
+                </div>
+                <div class="content-card">
+                    <h3 class="text-lg font-medium text-gray-800 mb-6 text-center">Fraud Detection Performance</h3>
+                    <canvas id="fraudChart"></canvas>
+                    <p class="text-center text-xs text-gray-500 mt-4">Features: 87 engineered features trained on 45,000
+                        historical claims</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                    <h4 class="font-semibold text-blue-900 mb-2">Member Experience</h4>
+                    <div class="flex items-end mb-2">
+                        <span class="text-3xl font-light text-blue-700">4.3</span>
+                        <span class="text-sm text-blue-500 mb-1 ml-1">/ 5.0</span>
+                    </div>
+                    <p class="text-xs text-blue-700">Patient Satisfaction Score (+13% improvement)</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg border border-green-100">
+                    <h4 class="font-semibold text-green-900 mb-2">Revenue Recovery</h4>
+                    <div class="flex items-end mb-2">
+                        <span class="text-3xl font-light text-green-700">$420K</span>
+                    </div>
+                    <p class="text-xs text-green-700">Annualized from reduced no-show rates (15% → 13.2%)</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-lg border border-purple-100">
+                    <h4 class="font-semibold text-purple-900 mb-2">Total ROI</h4>
+                    <div class="flex items-end mb-2">
+                        <span class="text-3xl font-light text-purple-700">280%</span>
+                    </div>
+                    <p class="text-xs text-purple-700">Based on $800K investment & $2.2M+ gross value</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        // Chart 1: Response Time
+        const ctx1 = document.getElementById('responseTimeChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Legacy System', 'New AI Pipeline'],
+                datasets: [{
+                    label: 'Median Response Time (Hours)',
+                    data: [48, 19],
+                    backgroundColor: ['#E5E7EB', '#3B82F6'],
+                    borderRadius: 6,
+                    barThickness: 60
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Hours' }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: Fraud Detection Metrics
+        const ctx2 = document.getElementById('fraudChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'radar',
+            data: {
+                labels: ['Precision', 'Recall', 'F1 Score', 'AUC-ROC', 'Specificity'],
+                datasets: [{
+                    label: 'XGBoost Ensemble',
+                    data: [92, 87, 89, 94, 90],
+                    fill: true,
+                    backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                    borderColor: 'rgb(37, 99, 235)',
+                    pointBackgroundColor: 'rgb(37, 99, 235)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(37, 99, 235)'
+                }, {
+                    label: 'Baseline',
+                    data: [78, 65, 71, 81, 75],
+                    fill: true,
+                    backgroundColor: 'rgba(229, 231, 235, 0.2)',
+                    borderColor: 'rgb(229, 231, 235)',
+                    pointBackgroundColor: 'rgb(229, 231, 235)',
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { display: true },
+                        suggestedMin: 50,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // Render Footer
+        document.addEventListener("DOMContentLoaded", () => {
+            renderFooter('footer-container', {
+                pageTagline: "Anthem Health • Enterprise AI Transformation",
+                pageDescription: "Transforming clinical operations using enterprise-scale AI/ML to enhance data-driven decision making."
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Research by Sai Kiran Gandluri - NoteAid Chatbot: AI-powered patient education using multi-agent LLMs and reinforcement learning">
+    <meta name="keywords"
+        content="Kiran Gandluri, Research, Machine Learning, Healthcare AI, NoteAid, Chatbot, Reinforcement Learning">
+    <meta name="author" content="Sai Kiran Gandluri">
+    <title>Research - Sai Kiran Gandluri</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script src="assets/js/footer.js"></script>
+
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Flex', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 200;
+            background: #FFFFFF;
+            color: #2C2C2C;
+            font-size: 16px;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-section {
+            background: #FFFFFF;
+            color: #2C2C2C;
+            padding: 140px 0 100px 0;
+            margin-bottom: 120px;
+            border-bottom: 1px solid #F5F5F5;
+        }
+
+        .hero-title {
+            font-family: 'Roboto Flex', sans-serif;
+            font-size: 56px;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            color: #1A1A1A;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-family: 'Roboto Flex', sans-serif;
+            font-size: 18px;
+            font-weight: 200;
+            line-height: 1.6;
+            color: #666666;
+            max-width: 700px;
+            letter-spacing: 0.01em;
+        }
+
+        .section-header {
+            font-family: 'Roboto Flex', sans-serif;
+            font-size: 36px;
+            font-weight: 300;
+            color: #1A1A1A;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .metric-card {
+            background: #FAFAFA;
+            border-radius: 8px;
+            padding: 28px;
+            border: 1px solid #EEEEEE;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .metric-card:hover {
+            background: #F5F5F5;
+            border-color: #E0E0E0;
+        }
+
+        .metric-number {
+            font-family: 'Roboto Flex', sans-serif;
+            font-size: 32px;
+            font-weight: 300;
+            color: #1A1A1A;
+            display: block;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .metric-label {
+            font-family: 'Roboto Flex', sans-serif;
+            font-size: 12px;
+            font-weight: 200;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 4px;
+            padding: 48px;
+            margin-bottom: 60px;
+            border: 1px solid #F0F0F0;
+        }
+
+        .research-image {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #EEEEEE;
+            margin: 40px auto;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+            display: block;
+        }
+
+        .research-image:hover {
+            opacity: 0.9;
+        }
+
+        .tech-stack {
+            display: inline-flex;
+            align-items: center;
+            background: #FAFAFA;
+            border: 1px solid #EEEEEE;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin: 4px;
+            font-family: 'Roboto Flex', sans-serif;
+            font-size: 13px;
+            font-weight: 200;
+            color: #666666;
+        }
+
+        .highlight-stat {
+            background: #FAFAFA;
+            border-left: 2px solid #CCCCCC;
+            border-radius: 0;
+            padding: 32px;
+            margin: 32px 0;
+        }
+
+        .process-step {
+            background: white;
+            border-radius: 0;
+            padding: 24px;
+            margin: 16px 0;
+            border-left: 2px solid #EEEEEE;
+            border-top: 1px solid #F5F5F5;
+            border-bottom: 1px solid #F5F5F5;
+        }
+
+        .step-number {
+            background: #F5F5F5;
+            color: #666666;
+            width: 28px;
+            height: 28px;
+            border-radius: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto Flex', sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+            margin-right: 16px;
+        }
+
+        .code-block {
+            background: #F8F8F8;
+            color: #333333;
+            border-radius: 0;
+            padding: 32px;
+            font-family: 'Roboto Flex', sans-serif;
+            font-size: 13px;
+            font-weight: 200;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 32px 0;
+            border: 1px solid #EEEEEE;
+        }
+
+        .nav-link {
+            font-family: 'Roboto Flex', sans-serif;
+            text-decoration: none;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .results-comparison {
+            background: #FAFAFA;
+            border-radius: 0;
+            padding: 48px;
+            margin: 60px 0;
+            border: 1px solid #EEEEEE;
+        }
+
+        .performance-badge {
+            background: #EEEEEE;
+            color: #666666;
+            padding: 4px 8px;
+            border-radius: 0;
+            font-family: 'Roboto Flex', sans-serif;
+            font-size: 11px;
+            font-weight: 200;
+            display: inline-block;
+            margin-left: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-header {
+                font-size: 28px;
+            }
+
+            .content-card {
+                padding: 24px;
+            }
+
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="w-full py-8 px-8 fixed top-0 bg-white z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-12">
+                <a href="index.html#projects"
+                    class="nav-link text-sm font-light text-gray-600 hover:text-gray-900 transition-colors duration-200">Projects</a>
+                <a href="index.html"
+                    class="nav-link text-sm font-light text-gray-600 hover:text-gray-900 transition-colors duration-200">Portfolio</a>
+            </div>
+            <div class="text-sm font-light text-gray-700 tracking-wider">
+                RESEARCH
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="max-w-4xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h1 class="hero-title">
+                    Chatbot To Help Patients Understand Their Health
+                </h1>
+                <div class="w-20 h-px bg-gray-300 mx-auto mb-8"></div>
+                <p class="hero-subtitle mx-auto">
+                    Advanced conversational AI system using multi-agent LLMs and reinforcement learning
+                    to help patients better understand their electronic health records
+                </p>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
+                <div class="metric-card">
+                    <span class="metric-number">3B</span>
+                    <span class="metric-label">Parameters</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">PPO</span>
+                    <span class="metric-label">RL Algorithm</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">Multi</span>
+                    <span class="metric-label">Agent System</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">100%</span>
+                    <span class="metric-label">Synthetic Data</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-8 pb-20" style="font-family: 'Roboto Flex', sans-serif; font-weight: 200;">
+
+        <!-- Abstract -->
+        <section class="mb-20">
+            <h2 class="section-header">Research Overview</h2>
+            <div class="content-card">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-light mb-8 text-gray-800"
+                            style="font-family: 'Roboto Flex', sans-serif; font-weight: 300;">The Challenge</h3>
+                        <p class="text-gray-600 mb-8"
+                            style="font-family: 'Roboto Flex', sans-serif; font-weight: 200; line-height: 1.7;">
+                            36% of American adults have limited health literacy, struggling to comprehend their
+                            Electronic Health Records (EHR). This creates a significant barrier to patient
+                            engagement and self-managed care.
+                        </p>
+                        <div class="highlight-stat">
+                            <h4 class="font-light text-lg mb-4"
+                                style="font-family: 'Roboto Flex', sans-serif; font-weight: 300;">Key Innovation</h4>
+                            <p class="text-gray-700"
+                                style="font-family: 'Roboto Flex', sans-serif; font-weight: 200; line-height: 1.7;">
+                                NoteAid-Chatbot introduces a novel "learning as conversation" paradigm,
+                                leveraging multi-agent LLMs trained with reinforcement learning to provide
+                                personalized patient education without costly human-generated training data.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="final_research_images/c627u1ckcj.pdf-1-0.png" alt="System Architecture Overview"
+                            class="research-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Architecture -->
+        <section class="mb-20">
+            <h2 class="section-header">Technical Architecture</h2>
+            <div class="content-card">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-light mb-6"
+                            style="font-family: 'Roboto Flex', sans-serif; font-weight: 300;">Core Technologies</h3>
+                        <div class="space-y-4">
+                            <div class="tech-stack">
+                                <span>🧠 LLaMA 3.2 (3B parameters)</span>
+                            </div>
+                            <div class="tech-stack">
+                                <span>🔄 Proximal Policy Optimization (PPO)</span>
+                            </div>
+                            <div class="tech-stack">
+                                <span>🤝 Multi-Agent Framework</span>
+                            </div>
+                            <div class="tech-stack">
+                                <span>📚 Synthetic Data Generation</span>
+                            </div>
+                            <div class="tech-stack">
+                                <span>🎯 Reinforcement Learning</span>
+                            </div>
+                        </div>
+
+                        <h4 class="text-lg font-light mt-12 mb-6"
+                            style="font-family: 'Roboto Flex', sans-serif; font-weight: 300;">Two-Stage Training
+                            Approach</h4>
+                        <div class="space-y-3">
+                            <div class="process-step">
+                                <span class="step-number">1</span>
+                                <div class="inline-block">
+                                    <h5 class="font-light"
+                                        style="font-family: 'Roboto Flex', sans-serif; font-weight: 300;">Supervised
+                                        Fine-Tuning</h5>
+                                    <p class="text-gray-600 text-sm"
+                                        style="font-family: 'Roboto Flex', sans-serif; font-weight: 200;">Conversational
+                                        data synthetically generated using medical strategies</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">2</span>
+                                <div class="inline-block">
+                                    <h5 class="font-light"
+                                        style="font-family: 'Roboto Flex', sans-serif; font-weight: 300;">Reinforcement
+                                        Learning</h5>
+                                    <p class="text-gray-600 text-sm"
+                                        style="font-family: 'Roboto Flex', sans-serif; font-weight: 200;">PPO-based
+                                        rewards from patient understanding assessments</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="final_research_images/c627u1ckcj.pdf-3-0.png" alt="Training Methodology"
+                            class="research-image">
+                        <p class="text-center text-sm text-gray-500 mt-6"
+                            style="font-family: 'Roboto Flex', sans-serif; font-weight: 200;">Multi-agent training
+                            framework with synthetic data generation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Deep Dive -->
+        <section class="mb-20">
+            <h2 class="section-header">Research Methodology</h2>
+            <div class="methodology-grid">
+                <div class="content-card">
+                    <h3 class="text-xl font-light mb-6"
+                        style="font-family: 'Roboto Flex', sans-serif; font-weight: 300;">Data Synthesis Pipeline</h3>
+                    <img src="final_research_images/c627u1ckcj.pdf-12-0.png" alt="Data Generation Pipeline"
+                        class="research-image">
+                    <p class="text-gray-600 mt-6"
+                        style="font-family: 'Roboto Flex', sans-serif; font-weight: 200; line-height: 1.7;">
+                        Automated generation of conversational training data using medical communication
+                        strategies, eliminating the need for expensive human annotations.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="text-xl font-light mb-6"
+                        style="font-family: 'Roboto Flex', sans-serif; font-weight: 300;">Reinforcement Learning
+                        Framework</h3>
+                    <img src="final_research_images/c627u1ckcj.pdf-13-0.png" alt="RL Framework" class="research-image">
+                    <p class="text-gray-600 mt-6"
+                        style="font-family: 'Roboto Flex', sans-serif; font-weight: 200; line-height: 1.7;">
+                        PPO-based training with rewards derived from patient understanding assessments
+                        in simulated hospital discharge scenarios.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experimental Results -->
+        <section class="mb-20">
+            <h2 class="section-header">Experimental Results</h2>
+
+            <!-- Performance Metrics -->
+            <div class="results-comparison">
+                <h3 class="text-xl font-semibold mb-6">Model Performance Comparison</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img src="final_research_images/c627u1ckcj.pdf-14-0.png" alt="Performance Metrics"
+                            class="research-image">
+                        <p class="text-center text-sm text-gray-600 mt-4">Comprehensive evaluation across multiple
+                            metrics</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Key Performance Indicators</h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                                <span class="font-medium">Clarity Score</span>
+                                <span class="performance-badge">Superior</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                                <span class="font-medium">Relevance</span>
+                                <span class="performance-badge">High</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
+                                <span class="font-medium">Dialogue Structure</span>
+                                <span class="performance-badge">Excellent</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-orange-50 rounded-lg">
+                                <span class="font-medium">Multi-turn Capability</span>
+                                <span class="performance-badge">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparative Analysis -->
+            <div class="content-card">
+                <h3 class="text-xl font-semibold mb-6">Turing Test Results</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img src="final_research_images/c627u1ckcj.pdf-15-0.png" alt="Turing Test Results"
+                            class="research-image">
+                    </div>
+                    <div>
+                        <div class="highlight-stat">
+                            <h4 class="font-semibold text-lg mb-2">Breakthrough Achievement</h4>
+                            <p class="text-gray-700 mb-4">
+                                NoteAid-Chatbot successfully passed the Turing test, demonstrating
+                                human-level conversational ability in patient education scenarios.
+                            </p>
+                            <div class="text-2xl font-bold text-green-600">
+                                Surpassed Non-Expert Human Performance
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Implementation -->
+        <section class="mb-20">
+            <h2 class="section-header">Implementation Details</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="content-card">
+                    <h3 class="text-xl font-semibold mb-4">Training Infrastructure</h3>
+                    <img src="final_research_images/c627u1ckcj.pdf-16-0.png" alt="Training Infrastructure"
+                        class="research-image">
+                    <div class="code-block mt-6">
+                        <div class="text-green-400"># Key Technical Specifications</div>
+                        <div class="text-blue-400">Model: </div>LLaMA 3.2 (3B parameters)
+                        <div class="text-blue-400">Algorithm: </div>Proximal Policy Optimization (PPO)
+                        <div class="text-blue-400">Data: </div>100% Synthetically Generated
+                        <div class="text-blue-400">Training: </div>Two-stage (SFT + RL)
+                        <div class="text-blue-400">Domain: </div>Healthcare/Patient Education
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="text-xl font-semibold mb-4">Emergent Behaviors Analysis</h3>
+                    <img src="final_research_images/c627u1ckcj.pdf-18-0.png" alt="Emergent Behaviors"
+                        class="research-image">
+                    <div class="space-y-3 mt-6">
+                        <div class="process-step">
+                            <h5 class="font-semibold">Structured Dialogue</h5>
+                            <p class="text-gray-600 text-sm">Maintains coherent conversation flow without explicit
+                                supervision</p>
+                        </div>
+                        <div class="process-step">
+                            <h5 class="font-semibold">Adaptive Communication</h5>
+                            <p class="text-gray-600 text-sm">Adjusts complexity based on patient understanding level</p>
+                        </div>
+                        <div class="process-step">
+                            <h5 class="font-semibold">Educational Strategies</h5>
+                            <p class="text-gray-600 text-sm">Incorporates diverse teaching methodologies organically</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Analytics -->
+        <section class="mb-20">
+            <h2 class="section-header">Advanced Analytics & Insights</h2>
+
+            <div class="methodology-grid">
+                <div class="content-card">
+                    <h3 class="text-xl font-semibold mb-4">Conversation Quality Analysis</h3>
+                    <img src="final_research_images/c627u1ckcj.pdf-19-0.png" alt="Quality Analysis"
+                        class="research-image">
+                    <p class="text-gray-600 mt-4">
+                        Comprehensive analysis of dialogue quality metrics including coherence,
+                        informativeness, and patient engagement levels.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="text-xl font-semibold mb-4">Learning Trajectory Visualization</h3>
+                    <img src="final_research_images/c627u1ckcj.pdf-20-0.png" alt="Learning Trajectory"
+                        class="research-image">
+                    <p class="text-gray-600 mt-4">
+                        Model learning progression during reinforcement learning training,
+                        showing rapid convergence to optimal conversational strategies.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="text-xl font-semibold mb-4">Comparative Effectiveness</h3>
+                    <img src="final_research_images/c627u1ckcj.pdf-21-0.png" alt="Effectiveness Comparison"
+                        class="research-image">
+                    <p class="text-gray-600 mt-4">
+                        Direct comparison with baseline models and human experts across
+                        multiple evaluation dimensions and patient scenarios.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies -->
+        <section class="mb-20">
+            <h2 class="section-header">Real-World Applications</h2>
+
+            <div class="content-card">
+                <h3 class="text-xl font-semibold mb-6">Clinical Case Studies</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img src="final_research_images/c627u1ckcj.pdf-25-0.png" alt="Case Study 1"
+                            class="research-image">
+                        <h4 class="font-semibold mt-4 mb-2">Discharge Summary Explanation</h4>
+                        <p class="text-gray-600 text-sm">
+                            Demonstrates the chatbot's ability to break down complex medical terminology
+                            and procedures into patient-friendly language.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="final_research_images/c627u1ckcj.pdf-25-1.png" alt="Case Study 2"
+                            class="research-image">
+                        <h4 class="font-semibold mt-4 mb-2">Interactive Patient Q&A</h4>
+                        <p class="text-gray-600 text-sm">
+                            Shows natural conversation flow where the chatbot proactively asks
+                            clarifying questions and provides personalized explanations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact & Future Work -->
+        <section class="mb-20">
+            <h2 class="section-header">Impact & Future Directions</h2>
+
+            <div class="results-comparison">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Clinical Impact</h3>
+                        <div class="space-y-4">
+                            <div class="highlight-stat">
+                                <h4 class="font-semibold">Improved Health Literacy</h4>
+                                <p class="text-gray-700">
+                                    Addresses the critical gap affecting 36% of American adults
+                                    with limited health literacy.
+                                </p>
+                            </div>
+                            <div class="highlight-stat">
+                                <h4 class="font-semibold">Scalable Solution</h4>
+                                <p class="text-gray-700">
+                                    Lightweight 3B parameter model enables deployment across
+                                    resource-constrained healthcare environments.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Technical Contributions</h3>
+                        <div class="space-y-3">
+                            <div class="process-step">
+                                <span class="step-number">1</span>
+                                <div class="inline-block">
+                                    <h5 class="font-semibold">Novel RL Framework</h5>
+                                    <p class="text-gray-600 text-sm">First application of PPO to patient education
+                                        domain</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">2</span>
+                                <div class="inline-block">
+                                    <h5 class="font-semibold">Synthetic Data Innovation</h5>
+                                    <p class="text-gray-600 text-sm">Eliminates need for expensive human-annotated
+                                        training data</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">3</span>
+                                <div class="inline-block">
+                                    <h5 class="font-semibold">Emergent Behaviors</h5>
+                                    <p class="text-gray-600 text-sm">Demonstrates sophisticated conversational abilities
+                                        without explicit training</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Metrics Summary -->
+        <section class="mb-20">
+            <h2 class="section-header">Research Impact Metrics</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="metric-card">
+                    <span class="metric-number">ACL</span>
+                    <span class="metric-label">Conference Submission</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">3B</span>
+                    <span class="metric-label">Parameter Efficiency</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">100%</span>
+                    <span class="metric-label">Synthetic Training</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">SOTA</span>
+                    <span class="metric-label">Performance</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Enhanced image zoom functionality
+        document.querySelectorAll('.research-image').forEach(img => {
+            img.addEventListener('click', () => {
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4';
+                modal.innerHTML = `
+                    <div class="relative max-w-6xl max-h-full">
+                        <img src="${img.src}" alt="${img.alt}" class="max-w-full max-h-full rounded-lg shadow-2xl">
+                        <button class="absolute top-4 right-4 text-white bg-black bg-opacity-70 hover:bg-opacity-90 rounded-full p-3 transition-all">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                `;
+
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal || e.target.closest('button')) {
+                        document.body.removeChild(modal);
+                    }
+                });
+
+                document.body.appendChild(modal);
+            });
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all content cards
+        document.querySelectorAll('.content-card, .metric-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Render Footer
+        document.addEventListener("DOMContentLoaded", () => {
+            renderFooter('footer-container', {
+                pageTagline: "NoteAid Chatbot Research",
+                pageDescription: "Advanced conversational AI research using multi-agent LLMs and reinforcement learning for patient education."
+            });
+        });
+    </script>
+</body>
+
+</html>

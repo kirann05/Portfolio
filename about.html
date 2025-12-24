@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="About Sai Kiran Gandluri - AI/ML Engineer. Discover my journey, focus, and tech stack.">
+    <meta name="keywords" content="Sai Kiran Gandluri, About, Portfolio, AI Engineer, Full-Stack, Experience">
+    <meta name="author" content="Sai Kiran Gandluri">
+    <title>About | Sai Kiran Gandluri</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Consolidated Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/footer.js"></script> <!-- Reusable Footer -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+        }
+
+        /* Custom Scrollbar for Webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="antialiased opacity-0 transition-opacity duration-700">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html"
+                class="group flex items-center gap-2 text-sm font-mono uppercase tracking-widest text-slate-500 hover:text-teal-600 transition-colors">
+                <span class="text-teal-400 group-hover:-translate-x-1 transition-transform">←</span> Home
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html#resume-page"
+                    class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Resume</a>
+                <a href="mailto:saikirang1215@gmail.com"
+                    class="px-4 py-2 text-xs font-mono uppercase tracking-wider text-teal-600 border border-teal-100 rounded-full hover:bg-teal-50 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Main About Wrapper -->
+        <section class="relative w-full px-6 py-16 md:py-24 bg-white text-slate-900" id="about-section">
+
+            <!-- Subtle Gradient Background -->
+            <div
+                class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-slate-50 to-transparent pointer-events-none opacity-50">
+            </div>
+
+            <!-- Content Grid -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 max-w-6xl mx-auto">
+
+                <!-- Left Column: Identity & Narrative (7 cols) -->
+                <div class="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1 pt-10 lg:pt-0">
+
+                    <!-- 00. Eyebrow -->
+                    <div class="about-reveal opacity-0 translate-y-8 mb-6">
+                        <span
+                            class="inline-block py-1 pr-3 text-xs font-mono font-medium tracking-widest uppercase text-teal-600 border-b border-teal-100">
+                            00. About
+                        </span>
+                    </div>
+
+                    <!-- 01. Name & Role -->
+                    <h1 class="about-reveal opacity-0 translate-y-8 text-5xl md:text-6xl font-light tracking-tight mb-4 leading-tight"
+                        style="font-family: 'Roboto Flex', sans-serif;">
+                        Sai Kiran <span class="font-medium text-slate-900">Gandluri</span>
+                    </h1>
+                    <p class="about-reveal opacity-0 translate-y-8 text-xl text-slate-500 font-light mb-10">
+                        Full-Stack Engineer & AI Researcher
+                    </p>
+
+                    <!-- 02. The Hook (Copy A: Recruiter Scan) -->
+                    <!-- 02. The Hook (Rotator) -->
+                    <div id="hook-rotator" class="about-reveal opacity-0 translate-y-8 relative min-h-[320px] mb-10"
+                        aria-live="polite">
+                        <!-- Content will be injected by JS -->
+                    </div>
+
+                    <!-- 03. Signature Actions -->
+                    <div class="about-reveal opacity-0 translate-y-8 flex flex-wrap gap-6 items-center pt-4">
+                        <a href="index.html#resume-page"
+                            class="group relative inline-flex items-center gap-3 px-8 py-3 bg-slate-900 text-white rounded-sm overflow-hidden transition-all hover:bg-teal-600">
+                            <span class="relative z-10 font-medium tracking-wide text-sm uppercase">View Resume</span>
+                            <svg class="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+
+                        <div class="flex gap-4">
+                            <a href="https://linkedin.com/in/kiran-gandluri-31670327b/" target="_blank"
+                                class="p-2 text-slate-400 hover:text-teal-600 transition-colors" title="LinkedIn">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                                    </path>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="mailto:saikirang1215@gmail.com"
+                                class="p-2 text-slate-400 hover:text-teal-600 transition-colors" title="Email">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Proof Points & Visuals (5 cols) -->
+                <div class="lg:col-span-5 order-1 lg:order-2 flex flex-col relative">
+
+                    <!-- Vertical Accent Line (Desktop Only) -->
+                    <div class="hidden lg:block absolute -left-10 top-0 bottom-0 w-px bg-slate-100">
+                        <div
+                            class="w-full bg-teal-400 scroll-line h-full transform scale-y-0 origin-top border-l border-teal-400">
+                        </div>
+                    </div>
+
+                    <div class="space-y-10">
+                        <!-- Profile Image -->
+                        <div
+                            class="about-reveal opacity-0 translate-y-8 relative group w-full max-w-md mx-auto lg:max-w-none">
+                            <div
+                                class="absolute inset-0 bg-teal-50 rounded-lg transform translate-x-3 translate-y-3 transition-transform group-hover:translate-x-2 group-hover:translate-y-2">
+                            </div>
+                            <img src="./assets/images/kiran_portrait_2025.jpg" alt="Sai Kiran Gandluri"
+                                class="relative z-10 w-full aspect-[4/5] object-cover rounded-lg shadow-sm transition-all duration-700 ease-out bg-slate-100"
+                                style="object-position: center 20%;">
+                        </div>
+
+                        <!-- Proof Tiles (Grid) -->
+                        <!-- Proof Tiles (Rotator) -->
+                        <div id="stats-rotator" class="grid grid-cols-2 gap-4">
+                            <!-- Initial Content (will be replaced by JS immediately) -->
+                            <div class="about-tile p-5 bg-slate-50 border border-slate-100 rounded-lg">
+                                <div class="text-2xl font-light text-slate-900 mb-1">15k+</div>
+                                <div class="text-[10px] font-mono uppercase tracking-wider text-slate-500">Machines
+                                    Monitored</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+            <!-- Focus Grid (2x2) -->
+            <div class="mt-24 pt-16 border-t border-slate-100 max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+                    <!-- Card 1: Focus -->
+                    <div class="about-focus opacity-0 translate-y-8">
+                        <h3 class="text-sm font-mono text-teal-600 uppercase tracking-widest mb-6">Current Focus</h3>
+                        <ul class="space-y-3 text-sm text-slate-600 font-light">
+                            <li class="flex items-start gap-3">
+                                <span class="text-teal-400 mt-1">▹</span> GenAI Agents (n8n + OpenAI)
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-teal-400 mt-1">▹</span> Real-time Scoring Pipelines
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-teal-400 mt-1">▹</span> System Design (HLD/LLD)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Stack -->
+                    <div class="about-focus opacity-0 translate-y-8">
+                        <h3 class="text-sm font-mono text-slate-400 uppercase tracking-widest mb-6">Tech Stack</h3>
+                        <ul class="space-y-3 text-sm text-slate-600 font-light">
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-300 mt-1">▹</span> React / Node.js
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-300 mt-1">▹</span> AWS (SageMaker, Bedrock)
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-300 mt-1">▹</span> Python / PyTorch / LangChain
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3: Learning -->
+                    <div class="about-focus opacity-0 translate-y-8">
+                        <h3 class="text-sm font-mono text-slate-400 uppercase tracking-widest mb-6">Learning</h3>
+                        <ul class="space-y-3 text-sm text-slate-600 font-light">
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-300 mt-1">▹</span> Distributed Architectures
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-300 mt-1">▹</span> Advanced RAG Patterns
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-300 mt-1">▹</span> Rust for Tooling
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 4: Beyond Code -->
+                    <div class="about-focus opacity-0 translate-y-8">
+                        <h3 class="text-sm font-mono text-slate-400 uppercase tracking-widest mb-6">Beyond Code</h3>
+                        <ul class="space-y-3 text-sm text-slate-600 font-light">
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-300 mt-1">▹</span> Skydiving (14,000ft verified)
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-300 mt-1">▹</span> Urban Photography
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-300 mt-1">▹</span> Table Tennis (State-level)
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Photography Strip -->
+            <div class="mt-24 pt-10 max-w-6xl mx-auto">
+                <div class="flex items-center justify-between mb-8 about-photo-reveal opacity-0 translate-y-4">
+                    <span class="text-xs font-mono text-slate-400 uppercase tracking-widest">Out of Office</span>
+                    <button onclick="openGalleryView()"
+                        class="text-xs font-mono text-teal-600 hover:text-teal-800 uppercase tracking-widest transition-colors flex items-center gap-2">
+                        View Gallery <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Carousel Window -->
+                <div class="relative w-full overflow-hidden" id="photo-carousel-wrapper">
+                    <!-- The Track -->
+                    <div id="photo-track"
+                        class="flex gap-6 transition-transform duration-700 ease-in-out cursor-pointer"
+                        style="width: max-content;">
+                        <!-- Images will be injected by JS for infinite loop feel -->
+                    </div>
+
+                    <!-- Gradient Overlays for cleaner look -->
+                    <div
+                        class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent pointer-events-none z-10">
+                    </div>
+                    <div
+                        class="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none z-10">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <!-- Photography Lightbox Overlay -->
+    <div id="photo-lightbox"
+        class="fixed inset-0 z-[10000] hidden flex flex-col items-center justify-center bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300">
+        <!-- Close Button -->
+        <button onclick="closeLightbox()"
+            class="absolute top-6 right-6 z-50 p-2 text-white/50 hover:text-white transition-colors rounded-full hover:bg-white/10">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <!-- Main Content -->
+        <div
+            class="relative w-full max-w-6xl h-full max-h-screen flex flex-col items-center justify-center p-4 md:p-10">
+
+            <!-- Image Container -->
+            <!-- Image Container -->
+            <div
+                class="relative w-auto h-auto max-h-[80vh] rounded-sm overflow-hidden shadow-2xl ring-1 ring-white/10 group">
+                <img id="lightbox-img" src="" alt="Gallery View"
+                    class="max-h-[80vh] w-auto object-contain bg-black transition-opacity duration-300">
+
+                <!-- Nav Buttons (Only visible on hover/touch) -->
+                <button onclick="prevImage(event)"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/50 text-white/50 hover:text-white rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+                <button onclick="nextImage(event)"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/50 text-white/50 hover:text-white rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Meta & Actions Bar -->
+            <div
+                class="flex items-center justify-between w-full max-w-lg mt-8 px-8 py-4 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 shadow-xl">
+
+                <!-- Location Info -->
+                <div class="flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_10px_rgba(45,212,191,0.5)]"></span>
+                    <span id="lightbox-loc"
+                        class="text-xs font-mono text-white tracking-widest uppercase opacity-90">Location</span>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-6">
+                    <!-- Like -->
+                    <button onclick="toggleLike(this)"
+                        class="group flex items-center gap-2.5 text-white/60 hover:text-rose-400 transition-colors">
+                        <svg class="w-5 h-5 transition-transform group-active:scale-90" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                            </path>
+                        </svg>
+                        <span class="text-[10px] font-mono count tracking-widest">142</span>
+                    </button>
+                    <div class="w-px h-4 bg-white/10"></div>
+                    <!-- Save -->
+                    <button onclick="toggleSave(this)"
+                        class="group text-white/60 hover:text-teal-400 transition-colors">
+                        <svg class="w-5 h-5 transition-transform group-active:scale-90" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fade in Body
+            document.body.classList.remove('opacity-0');
+
+            // Render Footer
+            renderFooter('footer-container', {
+                pageTagline: "Engineering with a Bird's-Eye View",
+                pageDescription: "Bridging the gap between cutting-edge AI research and scalable, human-centered production systems."
+            });
+
+            // Initialize GSAP
+            initAboutAnimations();
+        });
+
+        function initAboutAnimations() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const section = document.querySelector('#about-section');
+            if (!section) return;
+
+            // Select elements
+            const reveals = section.querySelectorAll('.about-reveal');
+            const tiles = section.querySelectorAll('.about-tile');
+            const focusCards = section.querySelectorAll('.about-focus');
+            const photos = section.querySelectorAll('.about-photo-reveal');
+            const scrollLine = section.querySelector('.scroll-line');
+            // Scroller is default (window) in full page mode
+
+            // Check for reduced motion
+            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            if (prefersReducedMotion) {
+                gsap.set([reveals, tiles, focusCards, photos], { opacity: 1, y: 0 });
+                if (scrollLine) scrollLine.style.transform = 'scaleY(1)';
+                return;
+            }
+
+            // --- Sequence ---
+            const tl = gsap.timeline({
+                defaults: { ease: "power2.out" }
+            });
+
+            // 1. Initial Identity Reveal
+            tl.to(reveals, {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.1
+            });
+
+            // 2. Vertical Line Growth (ScaleY)
+            if (scrollLine) {
+                tl.to(scrollLine, {
+                    scaleY: 1,
+                    duration: 1.2,
+                    ease: "power1.inOut"
+                }, "-=0.5");
+            }
+
+            // 3. Tiles (Values)
+            tl.to(tiles, {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.1
+            }, "-=0.8");
+
+            // 4. Focus Grid (Staggered Batch)
+            ScrollTrigger.batch(focusCards, {
+                start: "top 85%",
+                onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, overwrite: true })
+            });
+
+            // 5. Photos
+            gsap.from('#photo-carousel-wrapper', {
+                scrollTrigger: { trigger: '#photo-carousel-wrapper', start: "top 85%" },
+                opacity: 0,
+                y: 20,
+                duration: 0.8
+            });
+
+            // Start Rotations
+            initContentRotator();
+            initPhotoCarousel();
+        }
+
+        // --- Rotator Logic ---
+        const rotatorData = [
+            {
+                highlight: "Bridging research precision with production scale.",
+                text: `<p>AI/ML engineer with 5+ years of experience building production-grade models and LLM-powered systems in healthcare, insurance, and IT consulting, including EMNLP 2025–accepted work on patient-facing chatbots that cut annotation time by 30%. I design and ship cloud-native solutions on AWS using SageMaker, Bedrock, and LangChain to solve real problems like appointment routing, risk scoring, and fraud detection at scale.</p>`,
+                stats: [
+                    { val: "15k+", label: "Machines Monitored" },
+                    { val: "Peer", label: "Reviewed Research" },
+                    { val: "EMNLP", label: "2025 Co-Author" },
+                    { val: "HIPAA", label: "Compliant AI" }
+                ],
+                borderColor: "border-teal-400"
+            },
+            {
+                highlight: "Ideas to working products, fast.",
+                text: `<p>Full-stack and AI engineer who enjoys taking ideas from zero to working products, from an LLM-driven patient education platform to a full-stack bakery website built in 3 days to help a local vendor grow online. I work across React, Node.js, Flask, and SQL, focusing on fast delivery, clean architecture, and measurable outcomes like faster load times and higher user adoption.</p>`,
+                stats: [
+                    { val: "3 Days", label: "MVP Delivery" },
+                    { val: "Full", label: "Stack Architect" },
+                    { val: "React", label: "& Node.js" },
+                    { val: "High", label: "User Adoption" }
+                ],
+                borderColor: "border-indigo-400"
+            },
+            {
+                highlight: "Thriving in ambiguity and speed.",
+                text: `<p>Thrives in fast-paced environments where priorities shift quickly and problems are often loosely defined. I learn new tools and frameworks quickly, use AI assistants and LLMs in my day-to-day workflow, and enjoy breaking down complex issues into simple, testable solutions that teams can ship and iterate on rapidly.</p>`,
+                stats: [
+                    { val: "Rapid", label: "Prototyping" },
+                    { val: "AI", label: "First Workflow" },
+                    { val: "Agile", label: "Execution" },
+                    { val: "Complex", label: "Problem Solving" }
+                ],
+                borderColor: "border-rose-400"
+            }
+        ];
+
+        function initContentRotator() {
+            let currentIndex = 0;
+            const textContainer = document.getElementById('hook-rotator');
+            const statsContainer = document.getElementById('stats-rotator');
+
+            function render(index) {
+                const data = rotatorData[index];
+
+                // 1. Text Block
+                const textHTML = `
+                    <div class="rotator-item absolute top-0 left-0 w-full transition-all duration-700 ease-in-out" style="font-family: 'Inter', sans-serif;">
+                         <p class="text-lg md:text-xl font-light text-slate-800 mb-6 border-l-2 ${data.borderColor} pl-6">
+                            ${data.highlight}
+                        </p>
+                        <div class="space-y-4 text-base md:text-lg font-light prose prose-slate text-slate-600">
+                             ${data.text}
+                        </div>
+                    </div>
+                `;
+
+                // 2. Stats Block
+                const statsHTML = data.stats.map(s => `
+                     <div class="about-tile p-5 bg-slate-50 border border-slate-100 rounded-lg transition-all duration-500 hover:border-slate-300 transform">
+                        <div class="text-2xl font-light text-slate-900 mb-1">${s.val}</div>
+                        <div class="text-[10px] font-mono uppercase tracking-wider text-slate-500">${s.label}</div>
+                    </div>
+                `).join('');
+
+                // Text Cross-Fade Logic
+                const currentText = textContainer.querySelector('.rotator-item');
+                // Create temp wrapper for incoming
+                const incomingWrapper = document.createElement('div');
+                incomingWrapper.innerHTML = textHTML;
+                const incomingText = incomingWrapper.firstElementChild;
+
+                // Init incoming state
+                gsap.set(incomingText, { opacity: 0, x: 20 });
+                textContainer.appendChild(incomingText);
+
+                // Animate Out Current
+                if (currentText) {
+                    gsap.to(currentText, {
+                        opacity: 0,
+                        x: -20,
+                        duration: 0.5,
+                        onComplete: () => currentText.remove()
+                    });
+                }
+
+                // Animate In Incoming (overlap)
+                gsap.to(incomingText, { opacity: 1, x: 0, duration: 0.5, delay: 0.1 });
+
+
+                // Stats Transition (Slide/Scale)
+                // We'll replace innerHTML but animate the change
+                gsap.to(statsContainer.children, {
+                    opacity: 0,
+                    y: -10,
+                    scale: 0.95,
+                    stagger: 0.05,
+                    duration: 0.3,
+                    onComplete: () => {
+                        statsContainer.innerHTML = statsHTML;
+                        gsap.fromTo(statsContainer.children,
+                            { opacity: 0, y: 10, scale: 0.95 },
+                            { opacity: 1, y: 0, scale: 1, stagger: 0.05, duration: 0.4, ease: "back.out(1.2)" }
+                        );
+                    }
+                });
+            }
+
+            // Initial Render
+            render(0);
+
+            // Interval
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % rotatorData.length;
+                render(currentIndex);
+            }, 10000); // 10 seconds
+        }
+
+        // --- Photo Carousel Logic ---
+        function initPhotoCarousel() {
+            const track = document.getElementById('photo-track');
+
+            setTimeout(() => {
+                if (typeof galleryImages === 'undefined') return;
+
+                // Populate track
+                track.innerHTML = '';
+                const displayImages = [...galleryImages, ...galleryImages];
+
+                displayImages.forEach((imgData, i) => {
+                    const div = document.createElement('div');
+                    div.className = "flex-shrink-0 w-64 md:w-80 aspect-[4/3] bg-slate-100 rounded-lg overflow-hidden group relative cursor-pointer about-photo-reveal";
+                    div.innerHTML = `
+                        <img src="${imgData.src}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 text-white text-xs font-mono opacity-100 drop-shadow-md">
+                            ${imgData.loc}
+                        </div>
+                     `;
+                    track.appendChild(div);
+                });
+
+                // Simple auto-scroll animation
+                const itemWidth = track.firstElementChild.offsetWidth + 24; // 24px gap
+                const totalWidth = itemWidth * galleryImages.length;
+
+                gsap.to(track, {
+                    x: `-${totalWidth}px`,
+                    duration: 40, // Slow scroll
+                    ease: "none",
+                    repeat: -1,
+                    modifiers: {
+                        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth) // Seamless loop
+                    }
+                });
+
+                // Pause on hover
+                track.addEventListener('mouseenter', () => gsap.globalTimeline.pause());
+                track.addEventListener('mouseleave', () => gsap.globalTimeline.play());
+
+            }, 500);
+        }
+
+        // Gallery Data (In a real app this would be more dynamic)
+        const galleryImages = [
+            { src: './assets/images/photography/lowell-falls.jpg', loc: 'Lowell, MA' },
+            { src: './assets/images/photography/photo1.jpg', loc: 'Dubai, UAE' },
+            { src: './assets/images/photography/nahant-sunrise.jpg', loc: 'Nahant, MA' },
+            // Add other images from the folder if needed, for now using the 3 main ones + extras if available
+            { src: './assets/images/photography/california-coast-drive.jpg', loc: 'California Coast' },
+            { src: './assets/images/photography/la-classic-cruiser.jpg', loc: 'Los Angeles, CA' },
+            { src: './assets/images/photography/lowell-sunset.jpg', loc: 'Lowell, MA' }
+        ];
+
+        let currentImageIndex = 0;
+
+        // Lightbox Logic (Enhanced)
+        const lightbox = document.getElementById('photo-lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbLoc = document.getElementById('lightbox-loc');
+
+        const aboutSection = document.getElementById('about-section');
+        if (aboutSection) {
+            aboutSection.addEventListener('click', (e) => {
+                // Handle both direct clicks and bubbled clicks from the carousel
+                const card = e.target.closest('.about-photo-reveal');
+                if (card) {
+                    const img = card.querySelector('img');
+                    if (!img) return;
+
+                    const src = img.getAttribute('src');
+                    // We need to parse strict src matches or check known list
+                    // Since infinite loop creates clones, we rely on src matching
+
+                    // Simple search
+                    let index = galleryImages.findIndex(item => src.includes(item.src) || (item.src && item.src.endsWith(src.split('/').pop())));
+
+                    // Specific check for Dubai Palm Islands to be sure
+                    if (src.includes('photo1.jpg') || src.includes('dubai')) {
+                        const dubaiIndex = galleryImages.findIndex(i => i.loc.includes('Dubai'));
+                        if (dubaiIndex !== -1) index = dubaiIndex;
+                    }
+
+                    if (index !== -1) {
+                        openLightbox(index);
+                    } else {
+                        // Fallback: Add to temp array
+                        const locDiv = card.querySelector('.text-white');
+                        const locText = locDiv ? locDiv.innerText : 'Unknown Location';
+                        galleryImages.unshift({ src: src, loc: locText });
+                        openLightbox(0);
+                    }
+                }
+            });
+        }
+
+
+
+        function openGalleryView() {
+            openLightbox(0);
+        }
+
+        function openLightbox(index) {
+            if (!lightbox) return;
+            currentImageIndex = index;
+            updateLightboxContent();
+
+            lightbox.classList.remove('hidden', 'pointer-events-none');
+            lightbox.style.display = 'flex';
+
+            requestAnimationFrame(() => {
+                lightbox.classList.remove('opacity-0');
+            });
+
+            const count = 120 + Math.floor(Math.random() * 80);
+            const countEl = lightbox.querySelector('.count');
+            if (countEl) countEl.textContent = count;
+
+            document.addEventListener('keydown', handleEsc);
+        }
+
+        function updateLightboxContent() {
+            const item = galleryImages[currentImageIndex];
+            if (!item) return;
+
+            // Fade out slightly
+            lbImg.style.opacity = '0.5';
+
+            setTimeout(() => {
+                lbImg.src = item.src;
+                if (lbLoc) lbLoc.textContent = item.loc;
+                lbImg.onload = () => { lbImg.style.opacity = '1'; };
+            }, 100);
+        }
+
+        function nextImage(e) {
+            if (e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxContent();
+        }
+
+        function prevImage(e) {
+            if (e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxContent();
+        }
+
+        function closeLightbox() {
+            if (!lightbox) return;
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.style.display = 'none';
+            }, 300);
+            document.removeEventListener('keydown', handleEsc);
+        }
+
+        function handleEsc(e) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        }
+
+        function toggleLike(btn) {
+            const svg = btn.querySelector('svg');
+            const isLiked = svg.classList.contains('fill-current');
+            const countSpan = btn.querySelector('.count');
+            let count = parseInt(countSpan.textContent);
+
+            if (isLiked) {
+                svg.classList.remove('fill-current', 'text-rose-500', 'stroke-none');
+                svg.classList.add('text-white/60');
+                svg.setAttribute('fill', 'none');
+                svg.setAttribute('stroke', 'currentColor');
+                countSpan.textContent = count - 1;
+            } else {
+                svg.classList.remove('text-white/60');
+                svg.classList.add('fill-current', 'text-rose-500', 'stroke-none');
+                svg.setAttribute('fill', 'currentColor');
+                svg.setAttribute('stroke', 'none');
+                countSpan.textContent = count + 1;
+                if (window.gsap) gsap.fromTo(svg, { scale: 0.5 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.5)" });
+            }
+        }
+
+        function toggleSave(btn) {
+            const svg = btn.querySelector('svg');
+            const isSaved = svg.classList.contains('fill-current');
+            if (isSaved) {
+                svg.classList.remove('fill-current', 'text-teal-400', 'stroke-none');
+                svg.classList.add('text-white/60');
+                svg.setAttribute('fill', 'none');
+                svg.setAttribute('stroke', 'currentColor');
+            } else {
+                svg.classList.remove('text-white/60');
+                svg.classList.add('fill-current', 'text-teal-400', 'stroke-none');
+                svg.setAttribute('fill', 'currentColor');
+                svg.setAttribute('stroke', 'none');
+                if (window.gsap) gsap.fromTo(svg, { scale: 0.5 }, { scale: 1, duration: 0.4, ease: "back.out(1.7)" });
+            }
+        }
+    </script>
+</body>
+
+</html>
