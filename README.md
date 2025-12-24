@@ -96,9 +96,7 @@ This project is open source and available for personal use.
 **Sai Kiran Gandluri**
 
 - Email: kirangandluri1@gmail.com
-- LinkedIn: [Your LinkedIn]
-- GitHub: [Your GitHub]
-- Location: Lowell, Massachusetts
+- LinkedIn: https://www.linkedin.com/in/kiran-gandluri-31670327b/
 
 ## 🙏 Acknowledgments
 
