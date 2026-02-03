@@ -4,8 +4,7 @@ A modern, optimized personal portfolio showcasing projects, research, and profes
 
 ## 🌐 Live Website
 
-Visit the live portfolio at: [https://kirann05.github.io/Kiran_Portifolio/](https://kirann05.github.io/Kiran_Portifolio/)
-
+Visit my portfolio at: [https://kirann05.github.io/Portfolio/]
 ## ✨ Features
 
 - **Responsive Design** - Fully optimized for desktop, tablet, and mobile devices
@@ -98,7 +97,7 @@ This project is open source and available for personal use.
 - Email: kirangandluri1@gmail.com
 - LinkedIn: https://www.linkedin.com/in/kiran-gandluri-31670327b/
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Icons by [Huge Icons](https://hugeicons.com/)
 - Animations powered by [GSAP](https://greensock.com/gsap/)
