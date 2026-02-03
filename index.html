@@ -300,9 +300,17 @@
       transition: background-color 0.3s, color 0.3s;
       margin: 0;
       overflow-x: hidden;
-      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path d='M5.5 2L12.5 19L15 13L21.5 13L5.5 2Z' fill='black' stroke='%23333' stroke-width='1.5'/></svg>") 5 2, auto;
+      cursor: default;
     }
 
+    a,
+    button,
+    [role="button"],
+    input,
+    textarea,
+    select {
+    cursor: pointer;
+  }
     /* Typography */
     h1,
     h2,
